@@ -17,6 +17,11 @@
 #include <queue>
 #include "../Memory/Container.h"
 #include <cstring>
+#include <sys/epoll.h>
+#include <sys/socket.h>
+#include <sys/unistd.h>
+#include <fcntl.h>
+#include <netinet/in.h>
 using namespace std;
 
 static int64 getTick()

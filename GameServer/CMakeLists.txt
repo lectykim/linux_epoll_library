@@ -25,5 +25,9 @@ add_executable(GameServer main.cpp
         Util/BufferWriter.cpp
         Util/BufferWriter.h
         Util/LockQueue.h
+        Network/EpollManager.cpp
+        Network/EpollManager.h
+        Network/SocketManager.cpp
+        Network/SocketManager.h
 )
 target_link_libraries(Threads::Threads)
