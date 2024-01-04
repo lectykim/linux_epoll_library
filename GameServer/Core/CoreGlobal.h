@@ -9,5 +9,7 @@
 extern class ThreadManager* GThreadManager;
 extern class EpollManager* GEpollManager;
 extern class CoreGlobal* GCoreGlobal;
+extern class SendBufferManager* GSendBufferManager;
+
 
 #endif //GAMESERVER_COREGLOBAL_H

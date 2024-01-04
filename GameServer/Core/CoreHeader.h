@@ -22,6 +22,8 @@
 #include <sys/unistd.h>
 #include <fcntl.h>
 #include <netinet/in.h>
+#include "../Thread/Lock.h"
+#include "../Network/SendBuffer.h"
 using namespace std;
 
 static int64 getTick()

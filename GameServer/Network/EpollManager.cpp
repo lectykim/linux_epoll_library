@@ -86,6 +86,8 @@ void EpollManager::EpollRunning() {
                 else
                 {
                     // TODO : Receiver 생성
+                    shared_ptr<BYTE[]> bytes(new BYTE[str_len]);
+                    memcpy(bytes.get(),data,str_len);
                     printf("Recv Data [%d] \n",client_fd);
                 }
             }

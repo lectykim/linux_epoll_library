@@ -29,5 +29,9 @@ add_executable(GameServer main.cpp
         Network/EpollManager.h
         Network/SocketManager.cpp
         Network/SocketManager.h
+        Network/Session.cpp
+        Network/Session.h
+        Network/SendBuffer.cpp
+        Network/SendBuffer.h
 )
 target_link_libraries(Threads::Threads)
