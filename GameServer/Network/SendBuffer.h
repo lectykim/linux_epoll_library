@@ -48,7 +48,7 @@ public:
     uint32 FreeSize(){return static_cast<uint32>(_buffer.size())-_usedSize;}
 
 private:
-    Array<BYTE,SEND_BUFFER_CHUNK_SIZE> _buffer={};
+    array<BYTE,SEND_BUFFER_CHUNK_SIZE> _buffer={};
     bool _open = false;
     uint32 _usedSize=0;
 };
@@ -66,7 +66,7 @@ private:
 
 private:
     Lock _lock;
-    Vector<shared_ptr<SendBufferChunk>> _sendBufferChunks;
+    vector<shared_ptr<SendBufferChunk>> _sendBufferChunks;
 };
 
 #endif //GAMESERVER_SENDBUFFER_H

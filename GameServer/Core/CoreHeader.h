@@ -5,9 +5,12 @@
 #ifndef GAMESERVER_COREHEADER_H
 #define GAMESERVER_COREHEADER_H
 
+using namespace std;
+
+
 #include "Types.h"
+#include <memory>
 #include <iostream>
-#include "CoreTLS.h"
 #include "CoreGlobal.h"
 #include <vector>
 #include <unistd.h>
@@ -15,7 +18,6 @@
 #include "CoreMacro.h"
 #include <thread>
 #include <queue>
-#include "../Memory/Container.h"
 #include <cstring>
 #include <sys/epoll.h>
 #include <sys/socket.h>
@@ -24,7 +26,15 @@
 #include <netinet/in.h>
 #include "../Thread/Lock.h"
 #include "../Network/SendBuffer.h"
-using namespace std;
+#include <functional>
+#include "../Job/Job.h"
+#include "../Util/LockQueue.h"
+#include "../Job/JobQueue.h"
+#include "../Network/SendBuffer.h"
+#include "../Network/RecvBuffer.h"
+#include "CoreTLS.h"
+#include "../Memory/Memory.h"
+#include "../Memory/MemoryPool.h"
 
 static int64 getTick()
 {
@@ -35,5 +45,5 @@ static int64 getTick()
     theTick += ts.tv_sec*1000;
     return theTick;
 }
-
+using CallBackType = std::function<void()>;
 #endif //GAMESERVER_COREHEADER_H

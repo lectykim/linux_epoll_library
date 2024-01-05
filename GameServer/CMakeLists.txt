@@ -19,7 +19,6 @@ add_executable(GameServer main.cpp
         Core/CoreMacro.h
         Memory/Allocator.cpp
         Memory/Allocator.h
-        Memory/Container.h
         Util/BufferReader.cpp
         Util/BufferReader.h
         Util/BufferWriter.cpp
@@ -35,5 +34,14 @@ add_executable(GameServer main.cpp
         Network/SendBuffer.h
         Network/RecvBuffer.cpp
         Network/RecvBuffer.h
+        Job/Job.cpp
+        Job/Job.h
+        Job/JobQueue.cpp
+        Job/JobQueue.h
+        Memory/Container.h
+        Memory/MemoryPool.cpp
+        Memory/MemoryPool.h
+        Memory/Memory.cpp
+        Memory/Memory.h
 )
 target_link_libraries(Threads::Threads)

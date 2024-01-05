@@ -9,9 +9,7 @@ RecvBuffer::RecvBuffer(int32 bufferSize) :_bufferSize(bufferSize){
     _buffer.resize(_capacity);
 }
 
-RecvBuffer::~RecvBuffer() {
-
-}
+RecvBuffer::~RecvBuffer() = default;
 
 void RecvBuffer::Clean() {
     int32 dataSize= DataSize();

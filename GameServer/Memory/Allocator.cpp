@@ -13,3 +13,10 @@ void BaseAllocator::Release(void *ptr) {
 }
 
 
+void *PoolAllocator::Alloc(int32 size) {
+    return GMemory->Allocate(size);
+}
+
+void PoolAllocator::Release(void *ptr) {
+    GMemory->Release(ptr);
+}

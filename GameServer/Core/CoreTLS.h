@@ -9,6 +9,7 @@
 #include "CoreHeader.h"
 extern thread_local uint32 LThreadId;
 extern thread_local uint64 LEndTickCount;
-extern thread_local shared_ptr<SendBufferChunk> LSendBufferChunk;
+extern thread_local shared_ptr<class SendBufferChunk> LSendBufferChunk;
+extern thread_local JobQueue* LCurrentJobQueue;
 
 #endif //GAMESERVER_CORETLS_H

@@ -9,6 +9,8 @@
 ThreadManager* GThreadManager = nullptr;
 EpollManager* GEpollManager = nullptr;
 SendBufferManager* GSendBufferManager = nullptr;
+JobQueue* GJobQueue = nullptr;
+Memory* GMemory = nullptr;
 class CoreGlobal
 {
 public:
@@ -16,7 +18,9 @@ public:
     {
         GThreadManager = new ThreadManager();
         GEpollManager = new EpollManager();
+        GMemory = new Memory();
         GSendBufferManager = new SendBufferManager();
+        GJobQueue = new JobQueue();
         GEpollManager->EpollInit();
     }
 
@@ -25,6 +29,8 @@ public:
         delete GThreadManager;
         delete GEpollManager;
         delete GSendBufferManager;
+        delete GJobQueue;
+        delete GMemory;
     }
 };
 

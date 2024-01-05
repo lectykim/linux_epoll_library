@@ -6,7 +6,13 @@
 #include "Util/LockQueue.h"
 #include "Network/SocketManager.h"
 #include "Network/EpollManager.h"
-SimpleLockQueue<int32> simpleLockQueue;
+void DoWorkerJob()
+{
+    while(true)
+    {
+        GJobQueue->Execute();
+    }
+}
 int main() {
     int32 server_fd = SocketManager::Init();
     GEpollManager->EpollAdd(server_fd);
@@ -14,7 +20,12 @@ int main() {
 
         GEpollManager->EpollRunning();
     });
-
+    for(int32 i=0;i<5;i++)
+    {
+        GThreadManager->Launch([](){
+            DoWorkerJob();
+        });
+    }
 
     GThreadManager->Join();
     return 0;
