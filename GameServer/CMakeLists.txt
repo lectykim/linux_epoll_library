@@ -33,5 +33,7 @@ add_executable(GameServer main.cpp
         Network/Session.h
         Network/SendBuffer.cpp
         Network/SendBuffer.h
+        Network/RecvBuffer.cpp
+        Network/RecvBuffer.h
 )
 target_link_libraries(Threads::Threads)
