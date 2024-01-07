@@ -48,4 +48,19 @@ public:
     template<typename U>
     bool operator!=(const StlAllocator<U>&) { return false; }
 };
+
+template<typename Type,typename ...Args>
+Type* xnew(Args&&...args)
+{
+    Type* memory = static_cast<Type*>(PoolAllocator::Alloc(sizeof(Type)));
+    new(memory)Type(forward<Args>(args)...);
+    return memory;
+}
+
+template<typename Type>
+void xdelete(Type* obj)
+{
+    obj->~Type();
+    PoolAllocator::Release(obj);
+}
 #endif //GAMESERVER_ALLOCATOR_H

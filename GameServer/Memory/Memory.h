@@ -5,7 +5,6 @@
 #ifndef GAMESERVER_MEMORY_H
 #define GAMESERVER_MEMORY_H
 #include "../Core/CoreHeader.h"
-#include "Allocator.h"
 class MemoryPool;
 
 class Memory {
@@ -29,19 +28,6 @@ private:
     MemoryPool* _poolTable[MAX_ALLOC_SIZE+1];
 };
 
-template<typename Type,typename ...Args>
-Type* xnew(Args&&...args)
-{
-    Type* memory = static_cast<Type*>(PoolAllocator::Alloc(sizeof(Type)));
-    new(memory)Type(forward<Args>(args)...);
-    return memory;
-}
 
-template<typename Type>
-void xdelete(Type* obj)
-{
-    obj->~Type();
-    PoolAllocator::Release(obj);
-}
 
 #endif //GAMESERVER_MEMORY_H
