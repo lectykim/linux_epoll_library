@@ -43,5 +43,11 @@ add_executable(GameServer main.cpp
         Memory/MemoryPool.h
         Memory/Memory.cpp
         Memory/Memory.h
+        Conetent/SessionManager.cpp
+        Conetent/SessionManager.h
+        Conetent/GameSession.cpp
+        Conetent/GameSession.h
+        Conetent/ClientPacketHandler.cpp
+        Conetent/ClientPacketHandler.h
 )
 target_link_libraries(Threads::Threads)

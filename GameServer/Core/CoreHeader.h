@@ -13,11 +13,10 @@ using namespace std;
 #include <iostream>
 #include "CoreGlobal.h"
 #include <vector>
-
-
+#include "../Memory/Container.h"
 #include <unistd.h>
 #include <ctime>
-#include "CoreMacro.h"
+
 #include <thread>
 #include <queue>
 #include <cstring>
@@ -27,7 +26,7 @@ using namespace std;
 #include <fcntl.h>
 #include <netinet/in.h>
 #include "../Thread/Lock.h"
-#include "../Network/SendBuffer.h"
+#include "CoreMacro.h"
 #include <functional>
 #include "../Job/Job.h"
 #include "../Util/LockQueue.h"
@@ -37,6 +36,8 @@ using namespace std;
 #include "CoreTLS.h"
 #include "../Memory/Allocator.h"
 #include "../Memory/Memory.h"
+#include <arpa/inet.h>
+#include "../Conetent/SessionManager.h"
 
 static int64 getTick()
 {

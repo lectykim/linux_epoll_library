@@ -1,0 +1,14 @@
+syntax= "proto3";
+package Protocol;
+message C_SIGNUP
+{
+    string id=1;
+    string pw=2;
+    bytes name=3;
+}
+
+message S_SIGNUP
+{
+    bool success=1;
+    uint32 code=2;
+}

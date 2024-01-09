@@ -4,7 +4,7 @@
 
 
 #include "EpollManager.h"
-
+#include "../Conetent/GameSession.h"
 int32 EpollManager::EpollInit() {
     if((_fdEpoll=epoll_create(MAX_EVENTS))>0)
         _isEpollInit = true;
@@ -60,7 +60,10 @@ void EpollManager::EpollRunning() {
                 struct epoll_event clientEvents;
                 clientEvents.events = EPOLLIN|EPOLLET;
                 clientEvents.data.fd = client_fd;
-
+                shared_ptr<GameSession> gameSession = MakeShared<GameSession>();
+                gameSession->_fd = client_fd;
+                gameSession->_address = client_addr;
+                GSessionManager.Add(client_fd,gameSession);
                 //클라이언트 fd,epoll에 등록
                 if(epoll_ctl(_fdEpoll,EPOLL_CTL_ADD,client_fd,&clientEvents)<0)
                 {
@@ -74,22 +77,34 @@ void EpollManager::EpollRunning() {
                 //epoll client에 등록 된 클라이언트들의 send data 처리하기
                 int32 str_len;
                 int client_fd = _events[i].data.fd;
-                char data[4096];
-                str_len = read(client_fd,&data,sizeof(data));
+                GameSessionRef session = GSessionManager.find(client_fd);
+                char* buffer = reinterpret_cast<char*>(session->_recvBuffer.WritePos());
+                int32 len = session->_recvBuffer.FreeSize();
+
+                str_len = read(client_fd,buffer,len);
+
+                session->_recvBuffer.OnWrite(str_len);
 
                 if(str_len==0)
                 {
                     printf("client Disconnect [%d] \n",client_fd);
+                    GSessionManager.Remove(client_fd);
                     close(client_fd);
                     epoll_ctl(_fdEpoll,EPOLL_CTL_DEL,client_fd,nullptr);
                 }
                 else
                 {
                     // TODO : Receiver 생성
-                    shared_ptr<BYTE[]> bytes(new BYTE[str_len]);
-                    memcpy(bytes.get(),data,str_len);
-                    printf("Recv Data [%d] \n",client_fd);
+                    int32 dataSize = session->_recvBuffer.DataSize();
+                    int32 processLen = session->OnRecv(session->_recvBuffer.ReadPos(),dataSize);
+                    if(processLen<0 || dataSize<processLen || !session->_recvBuffer.OnRead(processLen))
+                    {
+                        cout << "OverFlow Disconnected" << endl;
+                        GSessionManager.Remove(client_fd);
+                    }
+                    session->_recvBuffer.Clean();
                 }
+
             }
         }
     }

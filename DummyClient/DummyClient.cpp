@@ -9,7 +9,6 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <arpa/inet.h>
-#include <thread>
 const int PORT = 7777;
 const char* SERVER_IP = "127.0.0.1";
 
@@ -31,7 +30,7 @@ int main()
     };
     while(1)
     {
-        const char* message = "Hello Server";
+        const char* message = "0000Hello Server";
         if(send(clientSocket,message,strlen(message),0)==-1)
         {
             std::cerr<< "Error sending to server" << std::endl;
