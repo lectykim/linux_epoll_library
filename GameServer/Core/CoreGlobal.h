@@ -12,5 +12,6 @@ extern class CoreGlobal* GCoreGlobal;
 extern class Memory* GMemory;
 extern class SendBufferManager* GSendBufferManager;
 extern class PacketQueue* GPacketQueue;
+extern class RedisClient* GRedisClient;
 
 #endif //GAMESERVER_COREGLOBAL_H

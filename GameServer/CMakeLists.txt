@@ -53,6 +53,15 @@ add_executable(GameServer main.cpp
         Protocol/Protocol.pb.h
         Job/PacketQueue.cpp
         Job/PacketQueue.h
+        Protocol/Enum.pb.cc
+        Protocol/Enum.pb.h
+        Content/User.cpp
+        Content/User.h
+        Content/Room.cpp
+        Content/Room.h
+        Redis/RedisClient.cpp
+        Redis/RedisClient.h
 )
 target_link_libraries(GameServer ${CMAKE_SOURCE_DIR}/ThirdPartyLib/lib/libprotobuf.a)
+target_link_libraries(GameServer ${CMAKE_SOURCE_DIR}/ThirdPartyLib/lib/libhiredis.a)
 target_link_libraries(Threads::Threads)

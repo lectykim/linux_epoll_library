@@ -41,11 +41,11 @@ int main()
     {
         char* message = "Hello Server";
         PacketHeader packetHeader;
-        packetHeader.id=1000;
+        packetHeader.id=0x0000;
         packetHeader.size=sizeof(message)+sizeof(PacketHeader);
         char * otherMessage = new char[packetHeader.size];
         std::memcpy(otherMessage,&packetHeader,sizeof(packetHeader));
-        std::memcpy(otherMessage+sizeof(PacketHeader),&message,strlen(message));
+        std::memcpy(otherMessage+sizeof(PacketHeader),message,strlen(message));
         if(send(clientSocket,otherMessage,strlen(message),0)==-1)
         {
             std::cerr<< "Error sending to server" << std::endl;

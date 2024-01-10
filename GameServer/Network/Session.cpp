@@ -43,7 +43,7 @@ Session::~Session()
 
 }
 
-void Session::Send(SendBufferRef sendBuffer) {
+void Session::Send(const SendBufferRef& sendBuffer) {
     int32 len = static_cast<long>(sendBuffer->WriteSize());
     char* buffer = reinterpret_cast<char*>(sendBuffer->Buffer());
     if(send(_fd,buffer,len,0)==-1)

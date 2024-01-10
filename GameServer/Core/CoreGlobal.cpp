@@ -7,11 +7,13 @@
 #include "../Network/EpollManager.h"
 #include "../Content/ClientPacketHandler.h"
 #include "../Job/PacketQueue.h"
+#include "../Redis/RedisClient.h"
 ThreadManager* GThreadManager = nullptr;
 EpollManager* GEpollManager = nullptr;
 SendBufferManager* GSendBufferManager = nullptr;
 PacketQueue* GPacketQueue = nullptr;
 Memory* GMemory = nullptr;
+RedisClient* GRedisClient = nullptr;
 class CoreGlobal
 {
 public:
@@ -23,6 +25,7 @@ public:
         GSendBufferManager = new SendBufferManager();
         GPacketQueue = new PacketQueue();
         GEpollManager->EpollInit();
+        GRedisClient = new RedisClient();
     }
 
     ~CoreGlobal()
@@ -32,6 +35,7 @@ public:
         delete GSendBufferManager;
         delete GMemory;
         delete GPacketQueue;
+        delete GRedisClient;
     }
 };
 
