@@ -4,7 +4,7 @@
 
 
 #include "EpollManager.h"
-#include "../Conetent/GameSession.h"
+#include "../Content/GameSession.h"
 int32 EpollManager::EpollInit() {
     if((_fdEpoll=epoll_create(MAX_EVENTS))>0)
         _isEpollInit = true;
@@ -94,7 +94,6 @@ void EpollManager::EpollRunning() {
                 }
                 else
                 {
-                    // TODO : Receiver 생성
                     int32 dataSize = session->_recvBuffer.DataSize();
                     int32 processLen = session->OnRecv(session->_recvBuffer.ReadPos(),dataSize);
                     if(processLen<0 || dataSize<processLen || !session->_recvBuffer.OnRead(processLen))

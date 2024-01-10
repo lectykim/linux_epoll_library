@@ -7,6 +7,7 @@
 
 #include "../Core/CoreHeader.h"
 #include "RecvBuffer.h"
+#include "SendBuffer.h"
 enum class EventType : uint8{
         Connect,
         Disconnect,
@@ -32,7 +33,7 @@ public:
 
 public:
 
-
+    void Send(SendBufferRef sendBuffer);
     string GetAddress();
     int32 GetFd(){return _fd;}
     shared_ptr<Session> GetSessionRef(){return static_pointer_cast<Session>(shared_from_this());}
@@ -49,6 +50,7 @@ private:
     Lock _lock;
 public:
     RecvBuffer _recvBuffer;
+
 };
 
 class PacketSession:public Session{

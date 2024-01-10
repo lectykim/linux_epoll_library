@@ -18,7 +18,7 @@ enum :uint16 {
 bool Handle_INVALID(PacketSessionRef& session,BYTE* buffer,int32 len);
 bool Handle_C_SIGNUP(PacketSessionRef& session,Protocol::C_SIGNUP& pkt);
 
-class ClientPacketHandler {
+class ClientPacketHandler{
 public:
     static void Init()
     {
@@ -27,11 +27,12 @@ public:
         GPacketHandler[PKT_C_SIGNUP] = [](PacketSessionRef& session,BYTE* buffer,int32 len){return HandlePacket<Protocol::C_SIGNUP>(Handle_C_SIGNUP,session,buffer,len);};
     }
 
-    static bool HandlePacket(PacketSessionRef& session,BYTE* buffer,int32 len)
+    static void HandlePacket(PacketSessionRef& session,BYTE* buffer,int32 len)
     {
         PacketHeader* header = reinterpret_cast<PacketHeader*>(buffer);
-        return GPacketHandler[header->id](session,buffer,len);
+        GPacketHandler[header->id](session,buffer,len);
     }
+
 
     static SendBufferRef MakeSendBuffer(Protocol::S_SIGNUP& pkt){return MakeSendBuffer(pkt,PKT_S_SIGNUP);}
 
@@ -41,7 +42,7 @@ private:
     static bool HandlePacket(ProcessFunc func,PacketSessionRef& session,BYTE* buffer,int32 len)
     {
         PacketType pkt;
-        if(!pkt.ParseFromArray(buffer+sizeof(PacketHeader),len-sizeof(PacketHeader)))
+        if(pkt.ParseFromArray(buffer + sizeof(PacketHeader),len-sizeof(PacketHeader))==false)
             return false;
 
         return func(session,pkt);
@@ -63,6 +64,4 @@ private:
         return sendBuffer;
     }
 };
-
-
 #endif //GAMESERVER_CLIENTPACKETHANDLER_H

@@ -13,6 +13,7 @@ bool Handle_INVALID(PacketSessionRef& session,BYTE* buffer,int32 len)
 
 bool Handle_C_SIGNUP(PacketSessionRef& session,Protocol::C_SIGNUP& pkt)
 {
+
     cout << "SignUp call"<<endl;
     return false;
 }

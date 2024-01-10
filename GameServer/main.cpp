@@ -3,14 +3,16 @@
 #include "Thread/ThreadManager.h"
 #include "Core/CoreGlobal.h"
 #include "Thread/Lock.h"
-#include "Conetent/ClientPacketHandler.h"
+#include "Content/ClientPacketHandler.h"
 #include "Network/SocketManager.h"
 #include "Network/EpollManager.h"
+#include "Job/PacketQueue.h"
 void DoWorkerJob()
 {
     while(true)
     {
-        GJobQueue->Execute();
+        GPacketQueue->Execute();
+        this_thread::sleep_for(10ms);
     }
 }
 int main() {
@@ -22,12 +24,9 @@ int main() {
 
         GEpollManager->EpollRunning();
     });
-    for(int32 i=0;i<5;i++)
-    {
-        GThreadManager->Launch([](){
-            DoWorkerJob();
-        });
-    }
+    GThreadManager->Launch([](){
+        DoWorkerJob();
+    });
 
     GThreadManager->Join();
     return 0;

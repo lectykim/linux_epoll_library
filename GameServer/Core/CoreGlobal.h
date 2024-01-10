@@ -5,12 +5,12 @@
 #ifndef GAMESERVER_COREGLOBAL_H
 #define GAMESERVER_COREGLOBAL_H
 
-
+#include "CoreHeader.h"
 extern class ThreadManager* GThreadManager;
 extern class EpollManager* GEpollManager;
 extern class CoreGlobal* GCoreGlobal;
 extern class Memory* GMemory;
 extern class SendBufferManager* GSendBufferManager;
-extern class JobQueue* GJobQueue;
+extern class PacketQueue* GPacketQueue;
 
 #endif //GAMESERVER_COREGLOBAL_H

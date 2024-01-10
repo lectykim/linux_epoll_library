@@ -43,11 +43,16 @@ add_executable(GameServer main.cpp
         Memory/MemoryPool.h
         Memory/Memory.cpp
         Memory/Memory.h
-        Conetent/SessionManager.cpp
-        Conetent/SessionManager.h
-        Conetent/GameSession.cpp
-        Conetent/GameSession.h
-        Conetent/ClientPacketHandler.cpp
-        Conetent/ClientPacketHandler.h
+        Content/SessionManager.cpp
+        Content/SessionManager.h
+        Content/GameSession.cpp
+        Content/GameSession.h
+        Content/ClientPacketHandler.cpp
+        Content/ClientPacketHandler.h
+        Protocol/Protocol.pb.cc
+        Protocol/Protocol.pb.h
+        Job/PacketQueue.cpp
+        Job/PacketQueue.h
 )
+target_link_libraries(GameServer ${CMAKE_SOURCE_DIR}/ThirdPartyLib/lib/libprotobuf.a)
 target_link_libraries(Threads::Threads)

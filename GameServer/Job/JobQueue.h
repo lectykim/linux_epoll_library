@@ -5,9 +5,9 @@
 #ifndef GAMESERVER_JOBQUEUE_H
 #define GAMESERVER_JOBQUEUE_H
 #include "../Core/CoreHeader.h"
-
 class Job;
 using CallBackType =std::function<void()>;
+using PacketHandle = std::function<void(PacketSessionRef,BYTE*,int32)>;
 class JobQueue :public enable_shared_from_this<JobQueue>{
 public:
     void DoAsync(CallBackType&& callBack)

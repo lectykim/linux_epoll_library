@@ -22,8 +22,8 @@ int32 PacketSession::OnRecv(BYTE *buffer, int32 len) {
 
         PacketHeader header = *(reinterpret_cast<PacketHeader*>(&buffer[processLen]));
 
-        //if(dataSize<header.size)
-        //    break;
+        if(dataSize<header.size)
+            break;
 
         OnRecvPacket(&buffer[processLen],header.size);
         processLen+=header.size;
@@ -41,4 +41,13 @@ PacketSession::~PacketSession()
 Session::~Session()
 {
 
+}
+
+void Session::Send(SendBufferRef sendBuffer) {
+    int32 len = static_cast<long>(sendBuffer->WriteSize());
+    char* buffer = reinterpret_cast<char*>(sendBuffer->Buffer());
+    if(send(_fd,buffer,len,0)==-1)
+    {
+        cout << "Error Sending To Client" << endl;
+    };
 }

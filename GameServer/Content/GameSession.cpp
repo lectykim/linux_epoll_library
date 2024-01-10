@@ -4,6 +4,7 @@
 
 #include "GameSession.h"
 #include "ClientPacketHandler.h"
+#include "../Job/PacketQueue.h"
 void GameSession::OnConnected() {
 
 }
@@ -18,9 +19,12 @@ void GameSession::OnRecvPacket(BYTE *buffer, int32 len) {
 
     cout << "Packet Received" << endl;
 
-
-    //PacketSession::OnRecvPacket(buffer, len);
-    ClientPacketHandler::HandlePacket(session,buffer,len);
+    PacketItem* packetItem = new PacketItem();
+    packetItem->packetSession = session;
+    packetItem->buffer=buffer;
+    packetItem->len=len;
+    GPacketQueue->DoAsync(packetItem);
+    //ClientPacketHandler::HandlePacket(session,buffer,len);
 }
 
 void GameSession::OnSend(int32 len) {

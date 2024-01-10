@@ -5,11 +5,12 @@
 #include "CoreGlobal.h"
 #include "../Thread/ThreadManager.h"
 #include "../Network/EpollManager.h"
-
+#include "../Content/ClientPacketHandler.h"
+#include "../Job/PacketQueue.h"
 ThreadManager* GThreadManager = nullptr;
 EpollManager* GEpollManager = nullptr;
 SendBufferManager* GSendBufferManager = nullptr;
-JobQueue* GJobQueue = nullptr;
+PacketQueue* GPacketQueue = nullptr;
 Memory* GMemory = nullptr;
 class CoreGlobal
 {
@@ -20,7 +21,7 @@ public:
         GEpollManager = new EpollManager();
         GMemory = new Memory();
         GSendBufferManager = new SendBufferManager();
-        GJobQueue = new JobQueue();
+        GPacketQueue = new PacketQueue();
         GEpollManager->EpollInit();
     }
 
@@ -29,8 +30,8 @@ public:
         delete GThreadManager;
         delete GEpollManager;
         delete GSendBufferManager;
-        delete GJobQueue;
         delete GMemory;
+        delete GPacketQueue;
     }
 };
 

@@ -9,8 +9,17 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <arpa/inet.h>
+#include <thread>
+#include<string>
+#include<chrono>
 const int PORT = 7777;
 const char* SERVER_IP = "127.0.0.1";
+
+struct PacketHeader
+{
+    unsigned short size;
+    unsigned short id;
+};
 
 int main()
 {
@@ -30,14 +39,20 @@ int main()
     };
     while(1)
     {
-        const char* message = "0000Hello Server";
-        if(send(clientSocket,message,strlen(message),0)==-1)
+        char* message = "Hello Server";
+        PacketHeader packetHeader;
+        packetHeader.id=1000;
+        packetHeader.size=sizeof(message)+sizeof(PacketHeader);
+        char * otherMessage = new char[packetHeader.size];
+        std::memcpy(otherMessage,&packetHeader,sizeof(packetHeader));
+        std::memcpy(otherMessage+sizeof(PacketHeader),&message,strlen(message));
+        if(send(clientSocket,otherMessage,strlen(message),0)==-1)
         {
             std::cerr<< "Error sending to server" << std::endl;
             close(clientSocket);
             return -1;
         }
-
+        std::this_thread::sleep_for(std::chrono::seconds(2));
         char buffer[1024];
         memset(buffer,0,sizeof(buffer));
         ssize_t bytesRead = recv(clientSocket,buffer,sizeof(buffer)-1,0);
