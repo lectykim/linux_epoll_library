@@ -13,9 +13,9 @@ public:
     {
         struct timeval timeout = {1,500000};
         //LOCAL
-        //context = redisConnectWithTimeout((char*)"127.0.0.1",6379,timeout);
+        context = redisConnectWithTimeout((char*)"127.0.0.1",6379,timeout);
         //ElasticCache
-        context = redisConnectWithTimeout((char*)"serverlesschattingserverprivate-t3qdkz.serverless.apn2.cache.amazonaws.com",6379,timeout);
+        //context = redisConnectWithTimeout((char*)"serverlesschattingserverprivate-t3qdkz.serverless.apn2.cache.amazonaws.com",6379,timeout);
         if(context->err){
             cout << "Connection error" << context->errstr <<endl;
             exit(1);
