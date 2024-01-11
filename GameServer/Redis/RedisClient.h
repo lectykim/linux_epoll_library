@@ -81,10 +81,9 @@ public:
     {
         reply = static_cast<redisReply *>(redisCommand(context,"HGETALL %s",key.c_str()));
 
-        if(reply->str == NULL)
+        if(reply->type == REDIS_REPLY_ERROR)
         {
-            freeReplyObject(reply);
-            return false;
+            printf("Error : %s",reply->str);
         }
         else
         {

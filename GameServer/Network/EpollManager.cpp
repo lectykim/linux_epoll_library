@@ -63,6 +63,7 @@ void EpollManager::EpollRunning() {
                 shared_ptr<GameSession> gameSession = MakeShared<GameSession>();
                 gameSession->_fd = client_fd;
                 gameSession->_address = client_addr;
+                cout << "Client Connected : " << gameSession->GetAddress() << endl;
                 GSessionManager.Add(client_fd,gameSession);
                 //클라이언트 fd,epoll에 등록
                 if(epoll_ctl(_fdEpoll,EPOLL_CTL_ADD,client_fd,&clientEvents)<0)

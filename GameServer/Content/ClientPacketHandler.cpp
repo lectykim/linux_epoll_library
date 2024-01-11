@@ -13,10 +13,6 @@ bool Handle_INVALID(PacketSessionRef& session,BYTE* buffer,int32 len)
 
     cout << "Invalid call"<<endl;
 
-    string keyCheck;
-
-    GRedisClient->redisGet("ID",keyCheck);
-
     return false;
 }
 
@@ -28,7 +24,7 @@ bool Handle_C_SIGNUP(PacketSessionRef& session,Protocol::C_SIGNUP& pkt)
     string keyCheck;
     Protocol::S_SIGNUP signupPkt;
     auto* returnMessage = new Protocol::ReturnMessage();
-    if(GRedisClient->redisGet(id,keyCheck))
+    if(!GRedisClient->redisGet(id,keyCheck))
     {
         map<string,string> map;
         map.insert(std::make_pair("pw",pkt.pw()));
@@ -137,6 +133,7 @@ bool Handle_C_CHAT(PacketSessionRef& session,Protocol::C_CHAT& pkt)
         userInfo->set_name(user->name);
         chatPkt.set_allocated_user_info(userInfo);
         chatPkt.set_msg(pkt.msg());
+        cout << "Message : " << pkt.msg() << endl;
         chatPkt.set_allocated_return_message(returnMessage);
         auto sendBuffer = ClientPacketHandler::MakeSendBuffer(chatPkt);
         gameSession->_room.lock()->Broadcast(sendBuffer);
