@@ -35,7 +35,7 @@ int32 SocketManager::Init() {
     error_check = bind(server_fd,(struct sockaddr*)&mSockAddr,sizeof(mSockAddr));
     if(error_check<0)
     {
-        printf("bind90 error [%d] \n",error_check);
+        printf("bind error [%d] \n",error_check);
         close(server_fd);
         return 0;
     }

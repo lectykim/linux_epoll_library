@@ -84,6 +84,7 @@ public:
         if(reply->type == REDIS_REPLY_ERROR)
         {
             printf("Error : %s",reply->str);
+            return false;
         }
         else
         {

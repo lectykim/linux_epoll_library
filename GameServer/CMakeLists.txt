@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
 set(THREAD_PREFER_PTHREAD_FLAG TRUE)
 find_package(Threads REQUIRED)
+include_directories(${CMAKE_SOURCE_DIR}/ThirdPartyLib/include/google)
+include_directories(${CMAKE_SOURCE_DIR}/ThirdPartyLib/include/hiredis)
 add_executable(GameServer main.cpp
         Core/Types.h
         Core/CoreHeader.h
