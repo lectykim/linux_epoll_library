@@ -76,7 +76,8 @@ public:
         }
 
         reply = static_cast<redisReply *>(redisCommandArgv(context, argv.size(), &(argv[0]), &(argvLen[0])));
-
+        if(reply->type == REDIS_REPLY_ERROR)
+            printf("Reply Error : %s",reply->str);
         freeReplyObject(reply);
     }
 
