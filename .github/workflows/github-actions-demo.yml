@@ -1,0 +1,21 @@
+name: C++
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Run CMake
+        run: |
+          cmake -S . -B build
+          cmake --build build -j 2
