@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="GameServer"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GameServer">
+				<Option output="/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/GameServer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/user/CLionProjects/linux_epoll_library/GameServer/ThirdPartyLib/include/google"/>
+					<Add directory="/home/user/CLionProjects/linux_epoll_library/GameServer/ThirdPartyLib/include/hiredis"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 GameServer"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GameServer/fast">
+				<Option output="/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/GameServer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/user/CLionProjects/linux_epoll_library/GameServer/ThirdPartyLib/include/google"/>
+					<Add directory="/home/user/CLionProjects/linux_epoll_library/GameServer/ThirdPartyLib/include/hiredis"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 GameServer/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Content/ClientPacketHandler.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Content/ClientPacketHandler.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Content/GameSession.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Content/GameSession.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Content/Room.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Content/Room.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Content/SessionManager.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Content/SessionManager.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Content/User.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Content/User.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Core/CoreGlobal.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Core/CoreGlobal.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Core/CoreHeader.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Core/CoreMacro.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Core/CoreTLS.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Core/CoreTLS.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Core/Types.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Job/Job.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Job/Job.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Job/JobQueue.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Job/JobQueue.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Job/PacketQueue.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Job/PacketQueue.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Memory/Allocator.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Memory/Allocator.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Memory/Container.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Memory/Memory.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Memory/Memory.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Memory/MemoryPool.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Memory/MemoryPool.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Network/EpollManager.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Network/EpollManager.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Network/RecvBuffer.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Network/RecvBuffer.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Network/SendBuffer.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Network/SendBuffer.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Network/Session.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Network/Session.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Network/SocketManager.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Network/SocketManager.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Protocol/Enum.pb.cc">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Protocol/Enum.pb.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Protocol/Protocol.pb.cc">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Protocol/Protocol.pb.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Redis/RedisClient.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Redis/RedisClient.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Thread/Lock.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Thread/Lock.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Thread/ThreadManager.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Thread/ThreadManager.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Util/BufferReader.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Util/BufferReader.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Util/BufferWriter.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Util/BufferWriter.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/Util/LockQueue.h">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/main.cpp">
+			<Option target="GameServer"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/linux_epoll_library/GameServer/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

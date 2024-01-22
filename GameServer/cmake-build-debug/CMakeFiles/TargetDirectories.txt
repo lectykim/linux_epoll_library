@@ -1,0 +1,3 @@
+/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/CMakeFiles/GameServer.dir
+/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/user/CLionProjects/linux_epoll_library/GameServer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
