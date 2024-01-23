@@ -15,10 +15,5 @@ jobs:
       - uses: actions/checkout@v3
       - name: cd directory
         run: cd GameServer
-      - name: configure
-        run: ./configure
-      - name: make
-        run: make check
-      - name: make distcheck
-        run: make distcheck
-
+      - name: build
+        run: cmake --build ./cmake-build-debug --target GameServer -- -j 2
