@@ -16,6 +16,6 @@ jobs:
       - name: cd directory
         run: cd GameServer
       - name: build
-        run: cmake -DCMAKE_BUILD_TYPE=Release -S . -B ./Release
+        run: cmake -DCMAKE_BUILD_TYPE=Release -S ./GameServer -B ./GameServer/Release
       - name: second build
-        run: cmake --build /Release
+        run: cmake --build ./GameServer/Release
