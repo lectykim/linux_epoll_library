@@ -21,3 +21,17 @@ jobs:
         run: sudo cp -r ./GameServer/ThirdPartyLib/include/* /usr/local/include/
       - name: build
         run: cmake --build ./GameServer/Release
+      - name: Login to Dockerhub
+        uses: docker/login-action@v1
+        with:
+          username: ${{secrets.DOCKER_USER_ID}}
+          password: ${{secrets.DOCKER_USER_PW}}
+
+      - name: build and release to Dockerhub
+        env:
+          NAME: lectykim
+          REPO: projectm
+        run: |
+          docker build -t $REPO .
+        docker tag $REPO:latest $NAME/$REPO:latest
+        docker push $NAME/$REPO:latest
