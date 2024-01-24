@@ -16,7 +16,7 @@ public:
     void Broadcast(const SendBufferRef& sendBuffer);
     GameSessionRef find(int32 fd);
 
-private:
+public:
     USE_LOCK;
     map<int32,GameSessionRef> _sessions;
 };

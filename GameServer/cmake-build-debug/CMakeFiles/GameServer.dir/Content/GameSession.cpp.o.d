@@ -326,5 +326,6 @@ CMakeFiles/GameServer.dir/Content/GameSession.cpp.o: \
  /usr/local/include/google/protobuf/extension_set.h \
  /usr/include/c++/11/cassert \
  /home/user/CLionProjects/linux_epoll_library/GameServer/Content/../Protocol/Enum.pb.h \
+ /home/user/CLionProjects/linux_epoll_library/GameServer/Content/Room.h \
  /home/user/CLionProjects/linux_epoll_library/GameServer/Content/../Job/PacketQueue.h \
  /home/user/CLionProjects/linux_epoll_library/GameServer/Content/../Job/../Core/CoreHeader.h

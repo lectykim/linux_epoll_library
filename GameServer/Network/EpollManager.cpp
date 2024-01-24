@@ -89,6 +89,7 @@ void EpollManager::EpollRunning() {
                 if(str_len==0)
                 {
                     printf("client Disconnect [%d] \n",client_fd);
+                    GSessionManager._sessions.find(client_fd)->second->OnDisconnected();
                     GSessionManager.Remove(client_fd);
                     close(client_fd);
                     epoll_ctl(_fdEpoll,EPOLL_CTL_DEL,client_fd,nullptr);
@@ -99,8 +100,11 @@ void EpollManager::EpollRunning() {
                     int32 processLen = session->OnRecv(session->_recvBuffer.ReadPos(),dataSize);
                     if(processLen<0 || dataSize<processLen || !session->_recvBuffer.OnRead(processLen))
                     {
-                        cout << "OverFlow Disconnected" << endl;
+                        cout << "client Disconnect [%d]" << endl;
+                        GSessionManager._sessions.find(client_fd)->second->OnDisconnected();
                         GSessionManager.Remove(client_fd);
+                        close(client_fd);
+                        epoll_ctl(_fdEpoll,EPOLL_CTL_DEL,client_fd,nullptr);
                     }
                     session->_recvBuffer.Clean();
                 }

@@ -4,13 +4,20 @@
 
 #include "GameSession.h"
 #include "ClientPacketHandler.h"
+#include "Room.h"
 #include "../Job/PacketQueue.h"
 void GameSession::OnConnected() {
 
 }
 
 void GameSession::OnDisconnected() {
-    //Session::OnDisconnected();
+    if(_user)
+    {
+        if(auto room = _room.lock())
+        {
+            room->Leave(_user);
+        }
+    }
 }
 
 void GameSession::OnRecvPacket(BYTE *buffer, int32 len) {
