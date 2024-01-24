@@ -18,6 +18,6 @@ jobs:
       - name: make cmake folder
         run: cmake -DCMAKE_BUILD_TYPE=Release -S ./GameServer -B ./GameServer/Release
       - name: copy third party lib
-        run: sudo cp -r ./GameServer/ThirdPartyLib/include/* /usr/lib/include/
+        run: sudo cp -r ./GameServer/ThirdPartyLib/include/* /usr/local/include/
       - name: build
         run: cmake --build ./GameServer/Release
